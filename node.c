@@ -7,4 +7,14 @@ node *createNode(uint8_t data)
     return newNode;
 }
 
+void setNext(node *currentNode, node *nextNode)
+{
+    currentNode->next = nextNode;
+}
+
+void removeHead()
+{
+    
+}
+
 

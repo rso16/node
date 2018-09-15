@@ -11,5 +11,7 @@
     }node;
 
 node *createNode(uint8_t data);
+void setNext(node *currentNode, node *nextNode);
+void removeHead();
 
 #endif
