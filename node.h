@@ -22,6 +22,7 @@ void addHeadToList(nodeList *list, node* newHead);
 void removeHeadFromList(nodeList *list);
 void addNodeToTail(nodeList *list, node *newTail);
 void addToTail(nodeList *list, uint8_t data);
+void printNode(node *currentNode);
 void printList(nodeList *list);
 
 #endif

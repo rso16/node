@@ -25,13 +25,15 @@ void removeHeadFromList(nodeList *list)
         //check if there is a next node
         if(list->head->next != NULL)
         {
-         node *newHead = list->head->next;
-         free(list->head);
-         list->head = newHead;
+            printf("test head has next\n");
+            node *newHead = list->head->next;
+            free(list->head);
+            list->head = newHead;
         }
         else
         {
-
+            free(list->head);
+            list->head = NULL;
         }
 
     }
@@ -45,12 +47,30 @@ void removeHeadFromList(nodeList *list)
 
 void printList(nodeList *list)
 {
-    node *currentNode = list->head;
-    int counter = 0;
-    while(currentNode != NULL)
+    if(list->head != NULL)
     {
-        printf("node %d = %d\n", counter, currentNode->data);
-        counter++;
-        currentNode = currentNode->next;
+        printf("test\n");
+        node *currentNode = list->head;
+        int counter = 0;
+        while(currentNode != NULL)
+        {
+            printf("node %d = %d\n", counter, currentNode->data);
+            counter++;
+            currentNode = currentNode->next;
+        }
     }
 }
+
+void printNode(node *currentNode)
+{
+    if(currentNode != NULL)
+    {
+        printf("data = %d\n", currentNode);
+    }
+    else
+    {
+        printf("error node is NULL\n");
+    }
+}
+
+
