@@ -38,7 +38,9 @@ void removeHeadFromList(nodeList *list)
     }
     else
     {
-        printf("ERROR No head\n");
+        #if PRINTF == PRINTF_EN
+            printf("ERROR No head\n");
+        #endif
         return;
     }
 
@@ -79,29 +81,34 @@ void addDataToList(nodeList *list, uint8_t data)
 
 void printList(nodeList *list)
 {
-    if(list->head != NULL)
-    {
-        node *currentNode = list->head;
-        int counter = 0;
-        while(currentNode != NULL)
+   #if PRINTF == PRINTF_EN 
+        if(list->head != NULL)
         {
-            printf("node %d = %d\n", counter, currentNode->data);
-            counter++;
-            currentNode = currentNode->next;
+            node *currentNode = list->head;
+            int counter = 0;
+            while(currentNode != NULL)
+            {
+                printf("node %d = %d\n", counter, currentNode->data);
+                counter++;
+                currentNode = currentNode->next;
+            }
         }
-    }
+   #endif
 }
 
 void printNode(node *currentNode)
 {
-    if(currentNode != NULL)
-    {
-        printf("data = %d\n", currentNode->data);
-    }
-    else
-    {
-        printf("ERROR is NULL\n");
-    }
+    
+   #if PRINTF == PRINTF_EN 
+        if(currentNode != NULL)
+        {
+            printf("data = %d\n", currentNode->data);
+        }
+        else
+        {
+            printf("ERROR is NULL\n");
+        }
+   #endif
 }
 
 

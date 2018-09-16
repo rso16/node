@@ -4,6 +4,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define PRINTF_DI 0
+#define PRINTF_EN 1
+#define PRINTF PRINTF_DI
+
 typedef struct Node
 {
     uint8_t data;
