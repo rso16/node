@@ -71,6 +71,12 @@ void addNodeToList(nodeList *list, node *newNode)
     }
 }
 
+void addDataToList(nodeList *list, uint8_t data)
+{
+   node *newNode = createNode(data);
+   addNodeToList(list, newNode);
+}
+
 void printList(nodeList *list)
 {
     if(list->head != NULL)
