@@ -25,7 +25,6 @@ void removeHeadFromList(nodeList *list)
         //check if there is a next node
         if(list->head->next != NULL)
         {
-            printf("test head has next\n");
             node *newHead = list->head->next;
             free(list->head);
             list->head = newHead;
@@ -39,17 +38,43 @@ void removeHeadFromList(nodeList *list)
     }
     else
     {
-        printf("No head\n");
+        printf("ERROR No head\n");
         return;
     }
 
+}
+
+void addNodeToList(nodeList *list, node *newNode)
+{
+    //check if head exist
+    if(list->head != NULL)
+    {
+        //check if tail exist
+        if(list->tail != NULL)
+        {   
+            node *temp = list->tail;
+            temp->next = newNode;
+            list->tail = newNode;
+        }
+        //tail doesn't exist
+        else
+        {
+            list->tail = newNode;
+            list->head->next = list->tail;
+        }
+
+    }
+    //head doesn't exist
+    else
+    {
+        addHeadToList(list, newNode);
+    }
 }
 
 void printList(nodeList *list)
 {
     if(list->head != NULL)
     {
-        printf("test\n");
         node *currentNode = list->head;
         int counter = 0;
         while(currentNode != NULL)
@@ -65,11 +90,11 @@ void printNode(node *currentNode)
 {
     if(currentNode != NULL)
     {
-        printf("data = %d\n", currentNode);
+        printf("data = %d\n", currentNode->data);
     }
     else
     {
-        printf("error node is NULL\n");
+        printf("ERROR is NULL\n");
     }
 }
 
