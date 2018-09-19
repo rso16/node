@@ -6,7 +6,7 @@
 
 #define PRINTF_DI 0
 #define PRINTF_EN 1
-#define PRINTF PRINTF_DI
+#define PRINTF PRINTF_EN
 
 typedef struct Node
 {

@@ -93,6 +93,10 @@ void printList(nodeList *list)
                 currentNode = currentNode->next;
             }
         }
+        else
+        {
+            printf("error no list\n ");
+        }
    #endif
 }
 
