@@ -34,7 +34,7 @@ void removeHeadFromList(nodeList *list)
             free(list->head);
             list->head = NULL;
         }
-
+	list->size--;
     }
     else
     {
@@ -64,7 +64,7 @@ void addNodeToList(nodeList *list, node *newNode)
             list->tail = newNode;
             list->head->next = list->tail;
         }
-
+	list->list++;
     }
     //head doesn't exist
     else
