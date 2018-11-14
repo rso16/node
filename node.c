@@ -64,7 +64,7 @@ void addNodeToList(nodeList *list, node *newNode)
             list->tail = newNode;
             list->head->next = list->tail;
         }
-	list->list++;
+	list->size++;
     }
     //head doesn't exist
     else
@@ -77,6 +77,16 @@ void addDataToList(nodeList *list, uint8_t data)
 {
    node *newNode = createNode(data);
    addNodeToList(list, newNode);
+}
+
+void addStrToList(nodeList *list, char *str)
+{
+	int index = 0;
+	while(str[index] != '\0')
+	{
+		addDataToList(list, str[index]);
+		index++;
+	}	
 }
 
 void printList(nodeList *list)
