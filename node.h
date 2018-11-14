@@ -14,20 +14,20 @@ typedef struct Node
     	struct Node *next;
 }node;
 
-typedef struct longNodeList
+typedef struct LongNodeList
 {
 	struct Node *head;
 	struct Node *tail;
 	long   size;
-}nodeList;
+}longNodeList;
 
 typedef struct NodeList
 {
 	struct Node *head;
 	struct Node *tail;
 	uint8_t   size;
+}nodeList;
 node * createNode(uint8_t data);
-
 void setNextNode(node *currentNode, node *nextNode);
 void addHeadToList(nodeList *list, node* newHead);
 void removeHeadFromList(nodeList *list);
