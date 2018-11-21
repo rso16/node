@@ -27,6 +27,7 @@ typedef struct NodeList
 	struct Node *tail;
 	uint8_t   size;
 }nodeList;
+
 node * createNode(uint8_t data);
 void setNextNode(node *currentNode, node *nextNode);
 void addHeadToList(nodeList *list, node* newHead);
@@ -36,5 +37,5 @@ void addDataToList(nodeList *list, uint8_t data);
 void addStrToList(nodeList *list, char *str); 
 void printNode(node *currentNode);
 void printList(nodeList *list);
-
+void printStrList(nodeList *list);
 #endif

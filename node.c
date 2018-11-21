@@ -89,6 +89,21 @@ void addStrToList(nodeList *list, char *str)
 	}	
 }
 
+void printNode(node *currentNode)
+{
+    
+   #if PRINTF == PRINTF_EN 
+        if(currentNode != NULL)
+        {
+            printf("data = %d\n", currentNode->data);
+        }
+        else
+        {
+            printf("ERROR is NULL\n");
+        }
+   #endif
+}
+
 void printList(nodeList *list)
 {
    #if PRINTF == PRINTF_EN 
@@ -110,19 +125,25 @@ void printList(nodeList *list)
    #endif
 }
 
-void printNode(node *currentNode)
+void printStrList(nodeList *list)
 {
-    
    #if PRINTF == PRINTF_EN 
-        if(currentNode != NULL)
+        if(list->head != NULL)
         {
-            printf("data = %d\n", currentNode->data);
+            node *currentNode = list->head;
+            int counter = 0;
+            while(currentNode != NULL)
+            {
+                printf("%c", counter, currentNode->data);
+                counter++;
+                currentNode = currentNode->next;
+            }
+            printf("\n");
         }
         else
         {
-            printf("ERROR is NULL\n");
+            printf("error no list\n ");
         }
    #endif
 }
-
 
