@@ -158,7 +158,7 @@ int listToStr(nodeList *list, char *str, int begin, int end)
 	}
 	
 	//check if end is after begin
-	if(end < begin)
+	if(end <= begin)
 	{
 		return -2;
 	}
@@ -175,7 +175,6 @@ int listToStr(nodeList *list, char *str, int begin, int end)
 	int index = 0;
 	while(index < begin)
 	{
-		printf("index = %d\n", index);
 		index++;
 		temp = temp->next;
 	}
