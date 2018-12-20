@@ -134,7 +134,7 @@ void printStrList(nodeList *list)
             int counter = 0;
             while(currentNode != NULL)
             {
-                printf("%c", counter, currentNode->data);
+                printf("%c", currentNode->data);
                 counter++;
                 currentNode = currentNode->next;
             }
@@ -152,7 +152,7 @@ int listToStr(nodeList *list, char *str, int begin, int end)
 {
 	//check params
 	//check if head exist
-	if(list.head == NULL)
+	if(list->head == NULL)
 	{
  		return -1;
 	}
@@ -160,34 +160,35 @@ int listToStr(nodeList *list, char *str, int begin, int end)
 	//check if end is after begin
 	if(end < begin)
 	{
-		retrun -2;
+		return -2;
 	}
-
+	
 	//check boundries
-	if(end < list.size)
+	if(end > list->size)
 	{
 		return -3;
 	}
 	
 	//make temp node
-	node *temp = malloc(sizof(node);
-		
+	node *temp = list->head;		
 	//go to begin location
 	int index = 0;
 	while(index < begin)
 	{
+		printf("index = %d\n", index);
 		index++;
-		temp = temp.next;
+		temp = temp->next;
 	}
-	
+		
 	//prepare string for concatenation
-	stcpy(str, "");
+	strcpy(str, "\0");
 	
 	while(index < end)
 	{	
-		strcat(str,temp.data);
-		temp = temp.next;
+		strcat(str, &temp->data);
+		temp = temp->next;
 		index++;
 	}
 
 	return 1;
+}
