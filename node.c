@@ -34,7 +34,7 @@ void removeHeadFromList(nodeList *list)
             free(list->head);
             list->head = NULL;
         }
-
+	list->size--;
     }
     else
     {
@@ -64,7 +64,7 @@ void addNodeToList(nodeList *list, node *newNode)
             list->tail = newNode;
             list->head->next = list->tail;
         }
-
+	list->size++;
     }
     //head doesn't exist
     else
@@ -77,6 +77,31 @@ void addDataToList(nodeList *list, uint8_t data)
 {
    node *newNode = createNode(data);
    addNodeToList(list, newNode);
+}
+
+void addStrToList(nodeList *list, char *str)
+{
+	int index = 0;
+	while(str[index] != '\0')
+	{
+		addDataToList(list, str[index]);
+		index++;
+	}	
+}
+
+void printNode(node *currentNode)
+{
+    
+   #if PRINTF == PRINTF_EN 
+        if(currentNode != NULL)
+        {
+            printf("data = %d\n", currentNode->data);
+        }
+        else
+        {
+            printf("ERROR is NULL\n");
+        }
+   #endif
 }
 
 void printList(nodeList *list)
@@ -100,19 +125,69 @@ void printList(nodeList *list)
    #endif
 }
 
-void printNode(node *currentNode)
+void printStrList(nodeList *list)
 {
-    
    #if PRINTF == PRINTF_EN 
-        if(currentNode != NULL)
+        if(list->head != NULL)
         {
-            printf("data = %d\n", currentNode->data);
+            node *currentNode = list->head;
+            int counter = 0;
+            while(currentNode != NULL)
+            {
+                printf("%c", counter, currentNode->data);
+                counter++;
+                currentNode = currentNode->next;
+            }
+            printf("\n");
         }
         else
         {
-            printf("ERROR is NULL\n");
+            printf("error no list\n ");
         }
    #endif
 }
 
 
+int listToStr(nodeList *list, char *str, int begin, int end)
+{
+	//check params
+	//check if head exist
+	if(list.head == NULL)
+	{
+ 		return -1;
+	}
+	
+	//check if end is after begin
+	if(end < begin)
+	{
+		retrun -2;
+	}
+
+	//check boundries
+	if(end < list.size)
+	{
+		return -3;
+	}
+	
+	//make temp node
+	node *temp = malloc(sizof(node);
+		
+	//go to begin location
+	int index = 0;
+	while(index < begin)
+	{
+		index++;
+		temp = temp.next;
+	}
+	
+	//prepare string for concatenation
+	stcpy(str, "");
+	
+	while(index < end)
+	{	
+		strcat(str,temp.data);
+		temp = temp.next;
+		index++;
+	}
+
+	return 1;
