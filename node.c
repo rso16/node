@@ -147,3 +147,47 @@ void printStrList(nodeList *list)
    #endif
 }
 
+
+int listToStr(nodeList *list, char *str, int begin, int end)
+{
+	//check params
+	//check if head exist
+	if(list.head == NULL)
+	{
+ 		return -1;
+	}
+	
+	//check if end is after begin
+	if(end < begin)
+	{
+		retrun -2;
+	}
+
+	//check boundries
+	if(end < list.size)
+	{
+		return -3;
+	}
+	
+	//make temp node
+	node *temp = malloc(sizof(node);
+		
+	//go to begin location
+	int index = 0;
+	while(index < begin)
+	{
+		index++;
+		temp = temp.next;
+	}
+	
+	//prepare string for concatenation
+	stcpy(str, "");
+	
+	while(index < end)
+	{	
+		strcat(str,temp.data);
+		temp = temp.next;
+		index++;
+	}
+
+	return 1;

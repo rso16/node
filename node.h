@@ -39,4 +39,5 @@ void addStrToList(nodeList *list, char *str);
 void printNode(node *currentNode);
 void printList(nodeList *list);
 void printStrList(nodeList *list);
+int listToStr(nodeList *list, char *str, int begin, int end);
 #endif
