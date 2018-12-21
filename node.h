@@ -1,4 +1,3 @@
-//test idi nahui 
 #ifndef NODE_H
 #define NODE_H
 #include <stdint.h>
@@ -27,6 +26,7 @@ typedef struct NodeList
 {
 	struct Node *head;
 	struct Node *tail;
+	struct Nodelist *next;
 	uint8_t   size;
 }nodeList;
 

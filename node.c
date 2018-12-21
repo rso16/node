@@ -89,7 +89,7 @@ void addNodeListToNodeListList(nodeListList *listList, nodeList *newNodeList)
         else
         {
             listList->tail = newNodeList;
-            listList->head->head->next = listList->tail;
+            listList->head->next = listList->tail;
         }
 	listList->size++;
     }
