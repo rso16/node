@@ -2,7 +2,7 @@
 
 node *createNode(uint8_t data)
 {
-    node *newNode = malloc(sizeof(node));
+    node *newNode = (node*) malloc(sizeof(node));
     newNode->data = data;
     return newNode;
 }
@@ -75,14 +75,14 @@ void addNodeToList(nodeList *list, node *newNode)
 
 void addNodeListToNodeListList(nodeListList *listList, nodeList *newNodeList)
 {
-        //check if head exist
+    //check if head exist
     if(listList->head != NULL)
     {
         //check if tail exist
         if(listList->tail != NULL)
         {   
             nodeList *temp = listList->tail;
-            temp->head->next = newNodeList;
+            temp->next = newNodeList;
             listList->tail = newNodeList;
         }
         //tail doesn't exist
@@ -96,7 +96,7 @@ void addNodeListToNodeListList(nodeListList *listList, nodeList *newNodeList)
     //head doesn't exist
     else
     {
-        addHeadToList(listList, newNodeList);
+    	listList->head = newNodeList;
     }
 }
 
@@ -211,7 +211,7 @@ int listToStr(nodeList *list, char *str, int begin, int end)
 	
 	while(index < end)
 	{	
-		strcat(str, &temp->data);
+		strcat(str,(char*) &temp->data);
 		temp = temp->next;
 		index++;
 	}

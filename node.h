@@ -2,7 +2,7 @@
 #define NODE_H
 #include <stdint.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdio.h> 
 #include <string.h>
 
 #define PRINTF_DI 0
@@ -12,7 +12,7 @@
 typedef struct Node
 {
 	uint8_t data;
-    struct Node *next;
+    	struct Node *next;
 }node;
 
 typedef struct LongNodeList
@@ -26,7 +26,7 @@ typedef struct NodeList
 {
 	struct Node *head;
 	struct Node *tail;
-	struct Nodelist *next;
+	struct NodeList *next;
 	uint8_t   size;
 }nodeList;
 
