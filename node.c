@@ -209,7 +209,7 @@ int listToStr(nodeList *list, char *str, int begin, int end)
 	//prepare string for concatenation
 	strcpy(str, "\0");
 	
-	while(index < end)
+	while(index <= end)
 	{	
 		strcat(str,(char*) &temp->data);
 		temp = temp->next;
