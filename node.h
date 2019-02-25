@@ -30,15 +30,6 @@ typedef struct NodeList
 	uint8_t   size;
 }nodeList;
 
-typedef struct 
-{
-	struct Node *head;
-	struct Node *tail;
-	struct NodeList *next;
-	uint8_t   size;
-}fileLine;
-
-
 typedef struct NodeListList
 {
 	struct NodeList *head;
