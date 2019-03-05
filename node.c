@@ -46,6 +46,45 @@ void removeHeadFromList(nodeList *list)
 
 }
 
+void removeTailFromList(nodeList *list)
+{
+	//check if tail exist
+	if(list->tail != NULL)
+	{
+		//check if head exist
+		if(list->head != NULL)
+		{
+			node *temp = malloc(sizeof(node));
+			temp = list->head;
+			//traverse list till node before tail
+			while(temp->next->next != NULL)
+			{
+				temp = temp->next;	
+			}
+			free(temp->next);
+			list->tail = temp;
+			list->tail->next = NULL;
+			list->size--;
+		}
+		else
+		{
+			#if PRINTF == PRINTF_EN
+			printf("ERROR No head\n");
+			#endif
+			return;
+		}
+	}
+	else
+	{
+		if(list->tail == NULL)
+		{
+			removeHeadFromList(list);
+			list->size--;
+		}
+	}
+}
+
+
 void addNodeToList(nodeList *list, node *newNode)
 {
     //check if head exist
@@ -70,6 +109,7 @@ void addNodeToList(nodeList *list, node *newNode)
     else
     {
         addHeadToList(list, newNode);
+	list->size++;
     }
 }
 

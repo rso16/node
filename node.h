@@ -41,6 +41,7 @@ node * createNode(uint8_t data);
 void setNextNode(node *currentNode, node *nextNode);
 void addHeadToList(nodeList *list, node* newHead);
 void removeHeadFromList(nodeList *list);
+void removeTailFromList(nodeList *list);
 void addNodeToList(nodeList *list, node *newNode);
 void addDataToList(nodeList *list, uint8_t data);
 void addNodeListToNodeListList(nodeListList * list, nodeList *nextNodeList);
