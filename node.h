@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h> 
 #include <string.h>
+#include <stdbool.h>
 
 #define PRINTF_DI 0
 #define PRINTF_EN 1
@@ -42,6 +43,7 @@ void setNextNode(node *currentNode, node *nextNode);
 void addHeadToList(nodeList *list, node* newHead);
 void removeHeadFromList(nodeList *list);
 void removeTailFromList(nodeList *list);
+void removeTailFromListTill(nodeList *list, char delimter);
 void addNodeToList(nodeList *list, node *newNode);
 void addDataToList(nodeList *list, uint8_t data);
 void addNodeListToNodeListList(nodeListList * list, nodeList *nextNodeList);

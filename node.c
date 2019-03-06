@@ -84,6 +84,21 @@ void removeTailFromList(nodeList *list)
 	}
 }
 
+void removeTailFromListTill(nodeList *list, char delimter)
+{
+	bool found = false;
+	while(!found)
+	{
+		if(list->tail->data == delimter)
+		{
+			found = true;
+		}
+		else
+		{
+			removeTailFromList(list);
+		}
+	}
+}
 
 void addNodeToList(nodeList *list, node *newNode)
 {
