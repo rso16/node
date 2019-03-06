@@ -209,24 +209,24 @@ void printList(nodeList *list)
 
 void printStrList(nodeList *list)
 {
-   #if PRINTF == PRINTF_EN 
-        if(list->head != NULL)
-        {
-            node *currentNode = list->head;
-            int counter = 0;
-            while(currentNode != NULL)
-            {
-                printf("%c", currentNode->data);
-                counter++;
-                currentNode = currentNode->next;
-            }
-            printf("\n");
-        }
-        else
-        {
-            printf("error no list\n ");
-        }
-   #endif
+	#if PRINTF == PRINTF_EN 
+		if(list->head != NULL)
+		{
+			node *currentNode = list->head;
+			int counter = 0;
+			while(currentNode != NULL)
+			{
+				printf("%c", currentNode->data);
+				currentNode = currentNode->next;
+				counter++;
+			}
+			printf("\n");
+		}
+		else
+		{
+		    printf("error no list\n ");
+		}
+	#endif
 }
 
 
